@@ -1,0 +1,25 @@
+<header>
+    <nav class="navbar is-dark has-background-black-ter is-flex is-justify-content-center">
+        <div class="columns">
+            <div class="column is-full">
+                <div class="navbar-brand">
+                    <a class="navbar-item is-size-1" href="{% url 'home' %}" hx-get="{% url 'home' %}" hx-target="#content" HX-Request>Tim Jones</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar is-dark has-background-black-ter is-flex is-justify-content-center">
+        <div class="columns">
+            <div class="column is-full">
+                <div class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item" href="{% url 'blog:blog-list' %}" hx-get="{% url 'blog:blog-list' %}" hx-target="#content" HX-Request>Portfolio</a>
+                        <a class="navbar-item" href="{% url 'blog:blog-list' %}" hx-get="{% url 'blog:blog-list' %}" hx-target="#content" HX-Request>Resume</a>
+                        <a class="navbar-item" href="{% url 'blog:blog-list' %}" hx-get="{% url 'blog:blog-list' %}" hx-target="#content" HX-Request>Blog</a>
+                        <a class="navbar-item" href="{% url 'blog:blog-list' %}" hx-get="{% url 'blog:blog-list' %}" hx-target="#content" HX-Request>Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
