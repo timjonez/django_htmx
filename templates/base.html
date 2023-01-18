@@ -13,13 +13,9 @@
     <script src="{% static 'js/htmx.min.js' %}" defer></script>
     <script src="https://unpkg.com/hyperscript.org@0.9.7"></script>
 </head>
-<body class="has-background-dark has-text-light h-100" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+<body class="has-background-dark has-text-light h-100" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' hx-boost="true">
     {% include 'snippets/_header.html' %}
     <section id="content">
-        <input type="checkbox" class="switch" id="switch" _="on click toggle .has-background-dark .has-text-light on body" checked/>
-        <label class="switch-label" for="switch">Toggle</label>
-
-
         {% block content %}
         {% endblock %}
     </section>
