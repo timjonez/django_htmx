@@ -34,6 +34,7 @@
 .switch:checked + label:after {
     left: calc(100% - 5px);
     transform: translateX(-100%);
+    background: #242424;
   }
   
 .switch-label:active:after {
