@@ -1,12 +1,9 @@
 
 {% extends request.is_htmx|yesno:"empty.html,base.html" %}
 
-
-
 {% block content %}
     <h1>Blog Posts</h1>
     {% for post in posts %}
-        <h1>{{post.title}}</h1>
-        <p>{{post.content}}</p>
+        {% include 'blog/components/_post_preview.html' with post=post %}
     {% endfor %}
 {% endblock %}
