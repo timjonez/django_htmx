@@ -3,7 +3,14 @@
         <div class="columns">
             <div class="column is-full">
                 <div class="navbar-brand">
-                    <a class="navbar-item is-size-1" href="{% url 'home' %}" hx-target="#content" HX-Request>Tim Jones</a>
+                    <a  class="navbar-item is-size-1"
+                        href="{% url 'home' %}"
+                        hx-target="#content"
+                        _="on click show #splash-screen"
+                        HX-Request
+                    >
+                        Tim Jones
+                    </a>
                 </div>
             </div>
         </div>
@@ -13,12 +20,42 @@
             <div class="column is-full">
                 <div class="navbar-menu">
                     <div class="navbar-start">
-                        <a class="navbar-item" href="{% url 'blog:post-list' %}" hx-target="#content" HX-Request>Portfolio</a>
-                        <a class="navbar-item" href="{% url 'blog:post-list' %}" hx-target="#content" HX-Request>Resume</a>
-                        <a class="navbar-item" href="{% url 'blog:post-list' %}" hx-target="#content" HX-Request>Blog</a>
-                        <a class="navbar-item" href="{% url 'blog:post-list' %}" hx-target="#content" HX-Request>Contact</a>
+                        <a  class="navbar-item"
+                            href="{% url 'blog:post-list' %}"
+                            hx-target="#content"
+                            _="on click show #splash-screen"
+                            HX-Request
+                        >
+                            Blog
+                        </a>
+                        <a  class="navbar-item"
+                            href="{% url 'blog:post-list' %}"
+                            hx-target="#content"
+                            _="on click show #splash-screen"
+                            HX-Request
+                        >
+                            Resume
+                        </a>
+                        <a  class="navbar-item"
+                            href="{% url 'blog:post-list' %}"
+                            hx-target="#content"
+                            _="on click show #splash-screen"
+                            HX-Request
+                        >
+                            Contact
+                        </a>
                         <div class="navbar-item">
-                            <input type="checkbox" class="switch" id="switch" _="on click toggle .has-background-dark .has-text-light on body" checked/>
+                            <input  type="checkbox"
+                                    class="switch"
+                                    id="switch"
+                                    _="
+                                        on click
+                                            toggle .has-background-dark .has-text-light on body
+                                        then
+                                            toggle .is-light .is-dark .has-background-black-ter on <nav.navbar/>
+                                    "
+                                    checked
+                            />
                             <label class="switch-label" for="switch">Toggle</label>
                         </div>
                     </div>
