@@ -8,16 +8,36 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <link rel="stylesheet" href="{% static 'css/utils.css' %}">
     <link rel="stylesheet" href="{% static 'css/switch.css' %}">
+    <link rel="stylesheet" href="{% static 'css/loader.css' %}">
     <script src="{% static 'js/htmx.min.js' %}" defer></script>
     <script src="https://unpkg.com/hyperscript.org@0.9.7"></script>
 </head>
-<body class="has-background-dark has-text-light h-100" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' hx-boost="true">
+<body
+    class="slide-it has-background-dark has-text-light h-100"
+    hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+    hx-boost="true"
+    _="on htmx:afterSettle hide #splash-screen"
+>
     {% include 'snippets/_header.html' %}
     <section id="content">
         {% block content %}
         {% endblock %}
     </section>
+    <section id="splash-screen">
+        <div class="h-100 is-flex is-justify-content-center is-align-items-center">
+            <div class="loader"></div>
+        </div>
+    </section>
+    <!-- fix the theme toggle -->
+
+    <script>
+        window.addEventListener('load', function() {
+            var el = document.getElementById('splash-screen');
+            el.style.cssText = "display: none !important";
+        })
+    </script>
 </body>
 </html>
