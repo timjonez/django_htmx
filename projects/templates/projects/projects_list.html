@@ -1,0 +1,9 @@
+{% extends request.is_htmx|yesno:"empty.html,base.html" %}
+
+{% block content %}
+    <h1>New Hello</h1>
+    {% for project in projects %}
+        <hr>
+        <h2>{{ project.slug }} {{ project.title }}</h2>
+    {% endfor %}
+{% endblock %}
