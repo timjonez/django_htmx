@@ -19,6 +19,6 @@ from .views import home_page
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", home_page, name='home'),
+    path("", include(("projects.urls", "projects"), namespace="projects")),
     path("blog/", include(("blog.urls", "blog"), namespace="blog")),
 ]
