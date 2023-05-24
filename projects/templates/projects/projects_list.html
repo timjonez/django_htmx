@@ -5,5 +5,8 @@
     {% for project in projects %}
         <hr>
         <h2>{{ project.slug }} {{ project.title }}</h2>
+        {% for pic in project.pictures.all %}
+            <img src="{{ pic.image.url }}" width="300">
+        {% endfor %}
     {% endfor %}
 {% endblock %}
